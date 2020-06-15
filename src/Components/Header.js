@@ -14,7 +14,8 @@ border-bottom: 1px solid black;
 function Header(){
     return(
         <NavBar>
-            <Link><button>Login</button></Link>
+        <Link to='/'><button>Home</button></Link>
+        <Link to='/auth'><button>Account</button></Link>
         </NavBar>
     )
 }
