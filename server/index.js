@@ -19,6 +19,7 @@ const express = require('express'),
     //Auth endpoints
     app.post('/api/login', authCtrl.login)
     app.post('/api/register', authCtrl.register)
+    app.get('/api/logout', authCtrl.logout)
 
     massive({
         connectionString: CONNECTION_STRING,

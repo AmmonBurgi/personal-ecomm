@@ -1,11 +1,15 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-function Landing(){
+
+function Landing(props){
     return(
         <div>
-            Landing Component
+            <p>{props.user.username} is logged in!</p>
         </div>
     )
 }
 
-export default Landing
+const mapStateToProps = (reduxState) => reduxState
+
+export default connect(mapStateToProps)(Landing)
