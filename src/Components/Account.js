@@ -21,8 +21,6 @@ function Account(props){
                 <p>{props.user.email}</p>
                 <h1>Username:</h1>
                 <p>{props.user.username}</p>
-                <h1>Password:</h1>
-                <p>{props.user.password}</p>
             </section>
             <button onClick={logout}>Logout</button>
         </div>

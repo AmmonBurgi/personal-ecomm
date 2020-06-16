@@ -20,6 +20,7 @@ const express = require('express'),
     app.post('/api/login', authCtrl.login)
     app.post('/api/register', authCtrl.register)
     app.get('/api/logout', authCtrl.logout)
+    app.get('/session', authCtrl.session)
 
     massive({
         connectionString: CONNECTION_STRING,

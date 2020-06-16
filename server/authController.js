@@ -31,11 +31,13 @@ login: async(req, res) => {
     }
     delete user[0].password
     req.session.user = user[0]
-    console.log(req.session)
     res.status(202).send(req.session.user)
 },
 logout: (req, res) => {
     req.session.destroy()
     res.sendStatus(200)
+},
+session: (req, res) => {
+    res.status(200).send(req.session.user)
 }
 }
