@@ -1,1 +1,1 @@
-select product_type from ecom_brand
+select * from ecom_sport

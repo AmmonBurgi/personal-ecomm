@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getUser} from '../../redux/reducer'
+import DropDown from '../DropDown/DropDown'
 import axios from 'axios'
 import './header.css'
 
 function Header(props){
-    const [sports, setSports] = useState([])
 
     const session = () => {
         axios.get('/session')
@@ -15,22 +15,11 @@ function Header(props){
         }).catch(err => console.log(err))
     }
 
-    const getSports = () => {
-        axios.get('/api/sports')
-        .then(res => setSports(res.data))
-        .catch(err => console.log(err))
-    }
-
 useEffect(() => {
 if(Object.keys(props.user).length === 0){
     session()
 }
-getSports()
 }, [])
-
-const sportMap = sports.map((element, index) => {
-return <p key={index}>{element.product_type}</p>
-})
     
     return(
         <div className='navbar'>
@@ -38,21 +27,15 @@ return <p key={index}>{element.product_type}</p>
             <section className='brands'>
                 <div>
                     <h1>Nike</h1>
-                    <div style={{position: 'absolute'}}>
-                        {sportMap}
-                    </div>
+                    <DropDown sport='nike'/>
                 </div>
                 <div>
                     <h1>Under Armour</h1>
-                    <div style={{position: 'absolute'}}>
-                        {sportMap}
-                    </div>
+                    <DropDown sport='UA'/>
                 </div>
                 <div>
                     <h1>Adidas</h1>
-                    <div style={{position: 'absolute'}}>
-                        {sportMap}
-                    </div>
+                    <DropDown sport='adidas'/>
                 </div>
             </section>
             <section className='user-nav'>

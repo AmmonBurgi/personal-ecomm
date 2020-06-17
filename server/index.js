@@ -25,6 +25,7 @@ const express = require('express'),
 
     //Product endpoints
     app.get('/api/sports', proCtrl.sports)
+    app.get('/api/product', proCtrl.getProducts)
 
     massive({
         connectionString: CONNECTION_STRING,
