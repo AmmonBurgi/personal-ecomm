@@ -1,0 +1,22 @@
+.navbar{
+box-sizing: border-box;
+width: 100%;
+height: 7vh;
+padding: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 1px solid black;
+}
+
+.brands{
+display: flex;
+justify-content: space-evenly;
+flex-direction: row;
+width: 20%;
+}
+
+.user-nav{
+position: absolute;
+right: 1em;
+}

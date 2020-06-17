@@ -4,6 +4,7 @@ const express = require('express'),
     massive = require('massive'),
     {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
     authCtrl = require('./authController'),
+    proCtrl = require('./proController'),
     port = SERVER_PORT,
     app = express()
     
@@ -21,6 +22,9 @@ const express = require('express'),
     app.post('/api/register', authCtrl.register)
     app.get('/api/logout', authCtrl.logout)
     app.get('/session', authCtrl.session)
+
+    //Product endpoints
+    app.get('/api/sports', proCtrl.sports)
 
     massive({
         connectionString: CONNECTION_STRING,

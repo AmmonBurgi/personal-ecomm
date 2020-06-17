@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import {getUser} from '../redux/reducer'
+import {getUser} from '../../redux/reducer'
 import {connect} from 'react-redux'
 
 function Auth(props){

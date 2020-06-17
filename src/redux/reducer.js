@@ -3,6 +3,7 @@ const initialState = {
 }
 
 const GET_USER = 'GET_USER'
+const GET_CART = ''
 
 export function getUser(userObj){
     return {

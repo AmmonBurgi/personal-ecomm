@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
-import {getUser} from '../redux/reducer'
+import {getUser} from '../../redux/reducer'
 
 function Account(props){
 

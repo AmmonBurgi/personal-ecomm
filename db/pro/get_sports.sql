@@ -1,0 +1,1 @@
+select product_type from ecom_brand

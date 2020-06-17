@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import routes from './routes'
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import './App.css';
 
 function App() {
