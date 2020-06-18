@@ -1,0 +1,1 @@
+delete from ecom_cart where product_id = $1;

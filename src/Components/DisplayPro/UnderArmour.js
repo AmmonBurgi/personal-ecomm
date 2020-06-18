@@ -13,10 +13,20 @@ useEffect(() => {
     }).catch(err => console.log(err))
 }, [props.match.params])
 
+const addToCart = (id) => {
+    axios.post('/api/cart', {id})
+    .then(() => alert('Added to Cart!'))
+    .catch(err => console.log(err)) 
+}
+
+
 const proMap = product.map((element, index) => {
     return <div key={index}>
-            <img src={element.pro_img} />
-            <p>{element.pro_title}</p>
+           <div>
+                <img src={element.pro_img} alt={element.pro_title} />
+                <p>{element.pro_title}</p>
+            </div>
+            <button onClick={() => addToCart(element.product_id)}>Add Cart!</button>
            </div>
 })
     return(

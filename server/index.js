@@ -26,6 +26,9 @@ const express = require('express'),
     //Product endpoints
     app.get('/api/sports', proCtrl.sports)
     app.get('/api/product', proCtrl.getProducts)
+    app.post('/api/cart', proCtrl.addToCart)
+    app.get('/api/cart', proCtrl.getCartProduct)
+    app.delete('/api/cart', proCtrl.deleteCart)
 
     massive({
         connectionString: CONNECTION_STRING,

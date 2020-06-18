@@ -3,7 +3,6 @@ const initialState = {
 }
 
 const GET_USER = 'GET_USER'
-const GET_CART = ''
 
 export function getUser(userObj){
     return {
@@ -11,6 +10,7 @@ export function getUser(userObj){
         payload: userObj
     }
 }
+
 export default function(state = initialState, action){
     const {payload, type} = action
     switch(type){
