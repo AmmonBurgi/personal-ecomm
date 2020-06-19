@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
-function DisplayProduct(){
+function DisplayProduct(props){
+    const [product, setProduct] = useState({})
+
+useEffect(() => {
+    const {id} = props.match.params
+    axios.get(`/api/product/${id}`)
+    .then(res => setProduct(res.data[0]))
+    .catch(err => console.log(err))
+})
     return(
         <div>
-            pro
+            <p>{product.pro_title}</p>
         </div>
     )
 }

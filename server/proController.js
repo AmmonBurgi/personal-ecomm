@@ -23,6 +23,14 @@ module.exports = {
             .catch(err => console.log(err))
         }
     },
+    getProduct: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.pro.get_product(id)
+        .then(product => {
+            res.status(200).send(product)
+        }).catch(err => console.log(err))
+    },
     addToCart: (req, res) => {
         const db = req.app.get('db')
         const {id} = req.body

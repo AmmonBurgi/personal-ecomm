@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getUser} from '../../redux/reducer'
-import DropDown from '../DropDown/DropDown'
+import DropDown from './DropDown'
 import axios from 'axios'
 import './header.css'
 

@@ -7,9 +7,8 @@ const [product, setPro] = useState([])
 
 useEffect(() => {
     const {id} = props.match.params
-    axios.get(`/api/product/?id=${id}&brand=adidas`)
+    axios.get(`/api/products/?id=${id}&brand=adidas`)
     .then(res => {
-        // console.log(res.data)
         setPro(res.data)
     }).catch(err => console.log(err))
 }, [props.match.params])
@@ -19,15 +18,20 @@ const addToCart = (id) => {
     .then(() => alert('Added to Cart!'))
     .catch(err => console.log(err)) 
 }
+
 const navLogin = () => {
 props.history.push('/auth')
 alert('Login to add item to cart!')
 }
 
+const navProduct = (id) => {
+props.history.push(`/product/${id}`)
+}
+
 const proMap = product.map((element, index) => {
     return <div key={index}>
             <div>
-                <img src={element.pro_img}  alt={element.pro_title}/>
+                <img onClick={() => navProduct(element.product_id)} src={element.pro_img}  alt={element.pro_title}/>
                 <p>{element.pro_title}</p>
             </div>
             {Object.keys(props.user).length !== 0 ? <button onClick={() => addToCart(element.product_id)}>Add To Cart!</button> : <button onClick={navLogin}>Add To Cart!</button>}

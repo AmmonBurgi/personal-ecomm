@@ -25,7 +25,8 @@ const express = require('express'),
 
     //Product endpoints
     app.get('/api/sports', proCtrl.sports)
-    app.get('/api/product', proCtrl.getProducts)
+    app.get('/api/products', proCtrl.getProducts)
+    app.get('/api/product/:id', proCtrl.getProduct)
     app.post('/api/cart', proCtrl.addToCart)
     app.get('/api/cart', proCtrl.getCartProduct)
     app.delete('/api/cart', proCtrl.deleteCart)

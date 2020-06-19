@@ -18,8 +18,8 @@ function Cart(){
     const deleteCart = (pro_id) => {
         axios.delete(`/api/cart/?pro_id=${pro_id}`)
         .then(() => {
-            getCart()
             alert('Removed from Cart!')
+            getCart()
         }).catch(err => console.log(err))
     }
 
