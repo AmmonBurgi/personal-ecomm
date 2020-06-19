@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getUser} from '../../redux/reducer'
-import DropDown from './DropDown'
 import axios from 'axios'
 import './header.css'
 
 function Header(props){
+    const [sports, setSports] = useState([])
 
     const session = () => {
         axios.get('/session')
@@ -19,23 +19,42 @@ useEffect(() => {
 if(Object.keys(props.user).length === 0){
     session()
 }
+axios.get('/api/sports')
+.then(res => setSports(res.data))
+.catch(err => console.log(err))
 }, [])
-    
+
+const nikeMap = sports.map((element, index) => {
+    return  <Link key={index} to={`/nike/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+})
+const UAMap = sports.map((element, index) => {
+    return  <Link key={index} to={`/UA/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+})
+const adidasMap = sports.map((element, index) => {
+    return  <Link key={index} to={`/adidas/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+})
+
     return(
         <div className='navbar'>
             <Link to='/'><button style={{position: 'absolute', left: '1em'}}>Home</button></Link>
             <section className='brands'>
-                <div>
+                <div 
+                className='title'
+                >
                     <h1>Nike</h1>
-                    <DropDown sport='nike'/>
+                    {nikeMap}
                 </div>
-                <div>
+                <div 
+                className='title'
+                >
                     <h1>Under Armour</h1>
-                    <DropDown sport='UA'/>
+                    {UAMap}
                 </div>
-                <div>
+                <div 
+                className='title'
+                >
                     <h1>Adidas</h1>
-                    <DropDown sport='adidas'/>
+                    {adidasMap}
                 </div>
             </section>
             <section className='user-nav'>

@@ -7,17 +7,47 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-bottom: 1px solid black;
-
+position: relative;
+z-index: 100;
 }
 
 .brands{
 display: flex;
 justify-content: space-evenly;
 flex-direction: row;
-width: 20%;
+width: 25%;
+height: 100%;
+/* background-color: lavenderblush; */
+/* position: absolute; */
+/* bottom: 0px; */
 }
 
 .user-nav{
 position: absolute;
 right: 1em;
+}
+
+.title{
+width: 200px;
+height: 150px;
+}
+
+.title h1{
+    padding-bottom: .6em;
+}
+
+.title p{
+    display: none;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+.title:hover p{
+    display: flex;
+}
+.title:hover h1{
+    border-bottom: solid black 4px;;
+}
+.nav:hover, .nav:visited, .nav:link, .nav:active{
+    text-decoration: none;
 }
