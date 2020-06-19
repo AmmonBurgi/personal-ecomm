@@ -4,17 +4,21 @@ import axios from 'axios'
 function Cart(){
     const [cart, setCart] = useState([])
 
-    useEffect(() => {
-    axios.get('/api/cart')
+    const getCart = () => {
+        axios.get('/api/cart')
     .then(res => {
-        console.log(res)
         setCart(res.data)
     }).catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+    getCart()
     }, [])
 
     const deleteCart = (pro_id) => {
         axios.delete(`/api/cart/?pro_id=${pro_id}`)
         .then(() => {
+            getCart()
             alert('Removed from Cart!')
         }).catch(err => console.log(err))
     }
