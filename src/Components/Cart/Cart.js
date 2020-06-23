@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import './cart.css'
 
 function Cart(){
     const [cart, setCart] = useState([])
@@ -24,13 +25,14 @@ function Cart(){
     }
 
     const cartMap = cart.map((element, index) => {
-        return <div key={index}>
+        return <div className='product-display' key={index}>
+                 <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
                  <p>{element.pro_title}</p>
                  <button onClick={() => deleteCart(element.product_id)}>X</button>
                </div>
     })
     return(
-        <div>
+        <div className='cart'>
             {cartMap}
         </div>
     )

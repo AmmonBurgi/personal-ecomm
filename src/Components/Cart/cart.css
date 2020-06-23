@@ -1,0 +1,14 @@
+.cart{
+    width: 100vw;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.product-display{
+    margin-top: 100px;
+}
+.pro-img{
+    width: 200px;
+    height: 200px;
+}

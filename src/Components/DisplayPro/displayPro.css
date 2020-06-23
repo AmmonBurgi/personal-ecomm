@@ -1,0 +1,12 @@
+.brand-display{
+    width: 100vw;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product{
+    width: 300px;
+    height: 260px;
+}

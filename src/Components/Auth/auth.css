@@ -1,0 +1,25 @@
+.auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 93vh;
+}
+.form{
+    width: 25%;
+    height: 300px;
+    padding: 10px;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.form input{
+    width: 300px;
+}
+.form-button{
+    width: 80px;
+    padding: 5px;
+    font-size: 17px;
+}

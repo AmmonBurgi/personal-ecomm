@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import {getUser} from '../../redux/reducer'
 import {connect} from 'react-redux'
+import './auth.css'
 
 function Auth(props){
     const [email, setEmail] = useState(''),
@@ -26,21 +27,21 @@ const register = () => {
 }
 
     return (
-        <div>
+        <div className='auth'>
             {toggle === false ? 
             (
-            <section>
-                <input placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
+            <section className='form'>
+                <input className='' placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
                 <input placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
-                <button onClick={login}>Login</button>
+                <button className='form-button' onClick={login}>Login</button>
                 <span>Need an account?<p onClick={() => setToggle(!toggle)}>Register</p></span>
             </section>
             ) : (
-            <section>
-                <input placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
-                <input placeholder='Username' onChange={(e) => setUsername(e.target.value)} /> 
-                <input placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
-                <button onClick={register}>Register</button>
+            <section className='form'>
+                <input className='email-input' placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
+                <input className='username-input' placeholder='Username' onChange={(e) => setUsername(e.target.value)} /> 
+                <input className='password-input' placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
+                <button className='form-button' onClick={register}>Register</button>
                 <span>Already have an account?<p onClick={() => setToggle(!toggle)}>Login</p></span>
             </section>
             )}
