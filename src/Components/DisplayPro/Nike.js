@@ -30,16 +30,16 @@ const navProduct = (id) => {
     }
 
 const proMap = product.map((element, index) => {
-    return <div key={index}>
+    return <div className='product' key={index}>
             <div>
-                <img onClick={() => navProduct(element.product_id)} src={element.pro_img} alt={element.pro_title} />
-                <p>{element.pro_title}</p>
+                <img className='pro-img' onClick={() => navProduct(element.product_id)} src={element.pro_img} alt={element.pro_title} />
+                <p className='pro-title'>{element.pro_title}</p>
             </div>
-            {Object.keys(props.user).length !== 0 ? <button onClick={() => addToCart(element.product_id)}>Add To Cart!</button> : <button onClick={navLogin}>Add To Cart!</button>}
+            {Object.keys(props.user).length !== 0 ? <button className='cart-button' onClick={() => addToCart(element.product_id)}>Add To Cart!</button> : <button  className='cart-button' onClick={navLogin}>Add To Cart!</button>}
            </div>
 })
     return(
-        <div>
+        <div className='brand-display'>
             {proMap}
         </div>
     )

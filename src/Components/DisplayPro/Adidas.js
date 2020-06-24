@@ -33,9 +33,9 @@ const proMap = product.map((element, index) => {
     return <div className='product' key={index}>
             <div>
                 <img className='pro-img' onClick={() => navProduct(element.product_id)} src={element.pro_img}  alt={element.pro_title}/>
-                <p>{element.pro_title}</p>
+                <p className='pro-title'>{element.pro_title}</p>
             </div>
-            {Object.keys(props.user).length !== 0 ? <button onClick={() => addToCart(element.product_id)}>Add To Cart!</button> : <button onClick={navLogin}>Add To Cart!</button>}
+            {Object.keys(props.user).length !== 0 ? <button className='cart-button' onClick={() => addToCart(element.product_id)}>Add To Cart!</button> : <button className='cart-button' onClick={navLogin}>Add To Cart!</button>}
            </div>
 })
     return(
