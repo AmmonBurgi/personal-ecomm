@@ -3,7 +3,10 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getUser} from '../../redux/reducer'
 import axios from 'axios'
+import {toast} from 'react-toastify'
 import './header.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faHome} from '@fortawesome/free-solid-svg-icons'
 
 function Header(props){
     const [sports, setSports] = useState([])
@@ -36,7 +39,7 @@ const adidasMap = sports.map((element, index) => {
 
     return(
         <div className='navbar'>
-            <Link to='/'><button style={{position: 'absolute', left: '1em'}}>Home</button></Link>
+            <Link to='/'><FontAwesomeIcon className='home-icon' icon={faHome}></FontAwesomeIcon></Link>
             <section className='brands'>
                 <div 
                 className='title'
@@ -58,7 +61,7 @@ const adidasMap = sports.map((element, index) => {
                 </div>
             </section>
             <section className='user-nav'>
-                {Object.keys(props.user).length !== 0 ? <Link to='/cart'><button>Cart</button></Link> : <button onClick={() => alert('Please login to access the Cart!')}>Cart</button>}
+                {Object.keys(props.user).length !== 0 ? <Link to='/cart'><button>Cart</button></Link> : <Link to='/auth'><button onClick={() => toast.error('Please login to access the Cart!')}>Cart</button></Link>}
                 {Object.keys(props.user).length === 0 ? <Link to='/auth'><button>Account</button></Link> : <Link to='/account'><button>Account</button></Link>}
             </section>
         </div>

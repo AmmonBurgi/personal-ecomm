@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import { toast } from 'react-toastify'
 
 function UnderArmour(props){
 const [product, setPro] = useState([])
@@ -22,7 +23,7 @@ const addToCart = (id) => {
 
 const navLogin = () => {
     props.history.push('/auth')
-    alert('Login to add item to cart!')
+    toast.info('Login to add item to cart!')
     }
 
 const navProduct = (id) => {

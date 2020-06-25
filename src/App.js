@@ -2,6 +2,8 @@ import React from 'react';
 import {withRouter} from 'react-router-dom'
 import routes from './routes'
 import Header from './Components/Header/Header'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
     <div className="App">
       <Header />
       {routes}
+      <ToastContainer autoClose={4000} />
     </div>
   );
 }

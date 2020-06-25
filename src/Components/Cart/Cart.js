@@ -25,14 +25,14 @@ function Cart(){
     }
 
     const cartMap = cart.map((element, index) => {
-        return <div className='product-display' key={index}>
+        return <div className='product' key={index}>
                  <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
-                 <p>{element.pro_title}</p>
-                 <button onClick={() => deleteCart(element.product_id)}>X</button>
+                 <p className='pro-title'>{element.pro_title}</p>
+                 <button className='cart-button' onClick={() => deleteCart(element.product_id)}>X</button>
                </div>
     })
     return(
-        <div className='cart'>
+        <div className='brand-display'>
             {cartMap}
         </div>
     )

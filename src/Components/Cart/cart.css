@@ -1,14 +1,32 @@
-.cart{
+.brand-display{
+    box-sizing: border-box;
     width: 100vw;
     height: 93vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    padding: 100px;
 }
-.product-display{
-    margin-top: 100px;
+
+.product{
+    box-sizing: border-box;
+    width: 500px;
+    height: 460px;
+    background-color: rgb(245, 245, 245);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
+
 .pro-img{
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.pro-title{
+    font-size: 25px;
+}
+
+.cart-button{
+    padding: 10px;
 }

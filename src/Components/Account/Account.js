@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {getUser} from '../../redux/reducer'
+import {toast} from 'react-toastify'
 
 function Account(props){
 
@@ -10,7 +11,7 @@ function Account(props){
         .then(() => {
             props.getUser({})
             props.history.push('/')
-            alert('You are now logged out!')
+            toast.info('You are now logged out!')
         }).catch(err => console.log(err))
     }
 

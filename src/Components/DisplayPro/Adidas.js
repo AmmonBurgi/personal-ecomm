@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import {toast} from 'react-toastify'
 import {connect} from 'react-redux'
 import './displayPro.css'
 
@@ -22,7 +23,7 @@ const addToCart = (id) => {
 
 const navLogin = () => {
 props.history.push('/auth')
-alert('Login to add item to cart!')
+toast.info('Login to add item to cart!')
 }
 
 const navProduct = (id) => {

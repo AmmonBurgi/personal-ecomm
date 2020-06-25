@@ -3,6 +3,7 @@ import axios from 'axios'
 import {getUser} from '../../redux/reducer'
 import {connect} from 'react-redux'
 import './auth.css'
+import { toast } from 'react-toastify'
 
 function Auth(props){
     const [email, setEmail] = useState(''),
@@ -13,9 +14,13 @@ function Auth(props){
 const login = () => {
     axios.post('/api/login', {email, password})
     .then(res => {
+        console.log(res)
         props.getUser(res.data)
         props.history.push('/')
-    }).catch(err => console.log(err))
+    }).catch(err => {
+        console.log(err)
+        toast.error(err.response.data)
+    })
 }
 
 const register = () => {
@@ -23,7 +28,7 @@ const register = () => {
     .then(res => {
         props.getUser(res.data)
         props.history.push('/')
-    }).catch(err => console.log(err))
+    }).catch(err => toast.error(err.response.data))
 }
 
     return (
@@ -32,7 +37,7 @@ const register = () => {
             (
             <section className='form'>
                 <input className='' placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
-                <input placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
+                <input placeholder='Password' type='password' onChange={(e) => setPassword(e.target.value)} /> 
                 <button className='form-button' onClick={login}>Login</button>
                 <span>Need an account?<p onClick={() => setToggle(!toggle)}>Register</p></span>
             </section>
@@ -40,7 +45,7 @@ const register = () => {
             <section className='form'>
                 <input className='email-input' placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
                 <input className='username-input' placeholder='Username' onChange={(e) => setUsername(e.target.value)} /> 
-                <input className='password-input' placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
+                <input className='password-input' type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
                 <button className='form-button' onClick={register}>Register</button>
                 <span>Already have an account?<p onClick={() => setToggle(!toggle)}>Login</p></span>
             </section>

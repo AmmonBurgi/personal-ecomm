@@ -51,3 +51,9 @@ height: 150px;
 .nav:hover, .nav:visited, .nav:link, .nav:active{
     text-decoration: none;
 }
+.home-icon{
+position: absolute;
+left: 30px;
+top: 14px;
+font-size: 50px;
+}
