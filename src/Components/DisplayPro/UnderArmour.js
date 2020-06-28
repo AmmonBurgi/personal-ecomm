@@ -17,7 +17,7 @@ useEffect(() => {
 
 const addToCart = (id) => {
     axios.post('/api/cart', {id})
-    .then(() => alert('Added to Cart!'))
+    .then(() => toast.info('Added to Cart!'))
     .catch(err => console.log(err)) 
 }
 

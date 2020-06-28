@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './cart.css'
+import { toast } from 'react-toastify'
 
 function Cart(){
     const [cart, setCart] = useState([])
@@ -19,7 +20,7 @@ function Cart(){
     const deleteCart = (pro_id) => {
         axios.delete(`/api/cart/?pro_id=${pro_id}`)
         .then(() => {
-            alert('Removed from Cart!')
+            toast.info('Removed from Cart!')
             getCart()
         }).catch(err => console.log(err))
     }

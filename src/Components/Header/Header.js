@@ -7,6 +7,8 @@ import {toast} from 'react-toastify'
 import './header.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faHome} from '@fortawesome/free-solid-svg-icons'
+import {faUserCircle} from '@fortawesome/free-solid-svg-icons'
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 
 function Header(props){
     const [sports, setSports] = useState([])
@@ -61,8 +63,8 @@ const adidasMap = sports.map((element, index) => {
                 </div>
             </section>
             <section className='user-nav'>
-                {Object.keys(props.user).length !== 0 ? <Link to='/cart'><button>Cart</button></Link> : <Link to='/auth'><button onClick={() => toast.error('Please login to access the Cart!')}>Cart</button></Link>}
-                {Object.keys(props.user).length === 0 ? <Link to='/auth'><button>Account</button></Link> : <Link to='/account'><button>Account</button></Link>}
+                {Object.keys(props.user).length !== 0 ? <Link to='/cart'><FontAwesomeIcon className='shopping-cart' icon={faShoppingCart}>Cart</FontAwesomeIcon></Link> : <Link to='/auth'><FontAwesomeIcon className='shopping-cart' icon={faShoppingCart} onClick={() => toast.info('Please login to access the Cart!')}>Cart</FontAwesomeIcon></Link>}
+                {Object.keys(props.user).length === 0 ? <Link to='/auth'><FontAwesomeIcon className='user-circle' icon={faUserCircle}>Account</FontAwesomeIcon></Link> : <Link to='/account'><FontAwesomeIcon className='user-circle' icon={faUserCircle}>Account</FontAwesomeIcon></Link>}
             </section>
         </div>
     )

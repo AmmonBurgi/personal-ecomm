@@ -1,0 +1,1 @@
+select * from ecom_product where product_id = ANY($1);

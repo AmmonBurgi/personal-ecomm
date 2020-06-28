@@ -42,26 +42,17 @@ module.exports = {
     },
     getCartProduct: (req, res) => {
         const db = req.app.get('db')
-        const {user_id} = req.session.user
-        let proId = []
+        const user_id = req.session && req.session.user && req.session.user.user_id;
+
         db.pro.get_cart_id(user_id)
-        .then(id => {
-            id.map(element => {
-                proId.push(element.product_id)
-            })  
-        }).catch(err => console.log(err))
-        db.pro.get_products()
-        .then(pro => {
-            let result = []
-            let products = pro
-            products.map(element => {
-                for(let i = 0; i < proId.length; i++){
-                    if(element.product_id === proId[i]){
-                        result.push(element)
-                    }
-                }
-            }) 
-            res.status(200).send(result)
+        .then(result => {
+            const proId = result.map(product => product.product_id);
+            db.pro.get_products_in_cart(`{${proId.join(",")}}`)
+            .then(result => {
+                res.status(200).send(result)
+            })
+            .catch(err => console.log(err))
+
         }).catch(err => console.log(err))
     },
     deleteCart: (req, res) => {
