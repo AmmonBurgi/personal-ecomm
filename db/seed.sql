@@ -21,3 +21,7 @@ pro_img text,
 brand_id integer references ecom_brand(brand_id),
 sport_id integer REFERENCES ecom_sport(sport_id)
 );
+create table ecom_cart(
+product_id INTEGER,
+user_id INTEGER REFERENCES ecom_user(user_id)
+);

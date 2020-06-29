@@ -30,13 +30,13 @@ axios.get('/api/sports')
 }, [])
 
 const nikeMap = sports.map((element, index) => {
-    return  <Link key={index} to={`/nike/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+    return  <Link className='link' key={index} to={`/nike/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
 })
 const UAMap = sports.map((element, index) => {
-    return  <Link key={index} to={`/UA/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+    return  <Link className='link' key={index} to={`/UA/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
 })
 const adidasMap = sports.map((element, index) => {
-    return  <Link key={index} to={`/adidas/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
+    return  <Link className='link' key={index} to={`/adidas/${element.sport_id}`} ><p className='nav'>{element.sport_title}</p></Link>
 })
 
     return(

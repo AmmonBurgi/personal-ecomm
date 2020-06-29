@@ -61,5 +61,12 @@ module.exports = {
         db.pro.delete_cart(pro_id)
         .then(() => res.sendStatus(200))
         .catch(err => console.log(err))
+    },
+    addProduct: (req, res) => {
+        const db = req.app.get('db')
+        const {proTitle, description, price, proImg, brand, sport} = req.body
+        db.pro.add_new_product(proTitle, description, price, proImg, parseInt(brand), parseInt(sport))
+        .then(() => res.sendStatus(201))
+        .catch(err => console.log(err))
     }
 }

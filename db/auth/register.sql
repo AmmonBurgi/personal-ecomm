@@ -1,9 +1,11 @@
 insert into ecom_user (
     email,
     username,
-    password
+    password,
+    admin
 ) values (
     $1,
     $2,
-    $3
+    $3,
+    $4
 )

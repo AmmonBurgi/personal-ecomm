@@ -3,7 +3,7 @@ import axios from 'axios'
 import './cart.css'
 import { toast } from 'react-toastify'
 
-function Cart(){
+function Cart(props){
     const [cart, setCart] = useState([])
 
     const getCart = () => {
@@ -27,8 +27,10 @@ function Cart(){
 
     const cartMap = cart.map((element, index) => {
         return <div className='product' key={index}>
-                 <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
-                 <p className='pro-title'>{element.pro_title}</p>
+                <div onClick={() => props.history.push(`/product/${element.product_id}`)}>
+                    <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
+                    <p className='pro-title'>{element.pro_title}</p>
+                </div>
                  <button className='cart-button' onClick={() => deleteCart(element.product_id)}>X</button>
                </div>
     })

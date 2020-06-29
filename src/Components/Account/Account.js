@@ -23,7 +23,10 @@ function Account(props){
                 <h1>Username:</h1>
                 <p>{props.user.username}</p>
             </section>
+            <div>
+            {props.user.admin === true ? (<button onClick={() => props.history.push('/add-product')} >Add Products</button>) : (null)}
             <button onClick={logout}>Logout</button>
+            </div>
         </div>
     )
 }

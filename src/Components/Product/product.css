@@ -4,19 +4,30 @@
     display: flex;
     justify-content: center;
     padding-top: 100px;
+    position: relative;
 }
 .product-display{
-    width: 50%;
-    height: 100%;
+    width: 80%;
+    height: 470px;
     background-color: whitesmoke;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 1px grey;
 }
 .product-img{
-    width: 30vw;
-    height: 400px;
+    width: 85%;
+    height: 300px;
     margin: 10px;
 }
 .product-display p{
     font-size: 20px;
+}
+.back-arrow{
+    font-size: 30px;
+    position: absolute;
+    left: 45px;
+    top: 35px;
+    color: black;
+}
+.back-arrow:hover{
+    color: #5098db;
 }

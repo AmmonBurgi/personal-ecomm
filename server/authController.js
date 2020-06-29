@@ -2,8 +2,15 @@ const bcrypt = require('bcryptjs')
 module.exports = {
 register: async(req, res) => {
 const db = req.app.get('db')
-const {email, username, password} = req.body
-
+const {email, username, password, adminPass} = req.body
+let isAdmin = false
+if(adminPass.length !== 0){
+    if(adminPass === 'adminPassCode'){
+        isAdmin = true
+    } else {
+        return res.status(401).send('Wrong Admin Password!')
+    }
+}
 let user = await db.auth.check_user(email)
 if(user[0]){
     return res.status(401).send('Email already exists!')
@@ -12,9 +19,9 @@ if(user[0]){
 let salt = bcrypt.genSaltSync(10)
 let hash = bcrypt.hashSync(password, salt)
 
-let newUser = await db.auth.register(email, username, hash)
+let newUser = await db.auth.register(email, username, hash, isAdmin)
 req.session.user = newUser[0]
-res.status(201).send(req.session.user)
+res.status(202).send(req.session.user)
 },
 login: async(req, res) => {
     const db = req.app.get('db')

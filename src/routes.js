@@ -8,6 +8,7 @@ import Nike from './Components/DisplayPro/Nike'
 import Adidas from './Components/DisplayPro/Adidas'
 import UnderArmour from './Components/DisplayPro/UnderArmour'
 import DisplayProduct from './Components/Product/DisplayProduct'
+import AddProduct from './Components/AddProduct/AddProduct'
 
 export default (
 <Switch>
@@ -19,5 +20,6 @@ export default (
     <Route path='/adidas/:id' component={Adidas} />
     <Route path='/UA/:id' component={UnderArmour} />
     <Route path='/product/:id' component={DisplayProduct} />
+    <Route path='/add-product' component={AddProduct} />
 </Switch>
 )
