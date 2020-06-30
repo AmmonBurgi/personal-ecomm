@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {getUser} from '../../redux/reducer'
 import {toast} from 'react-toastify'
+import './account.css'
 
 function Account(props){
 
@@ -16,16 +17,18 @@ function Account(props){
     }
 
     return (
-        <div>
-            <section>
-                <h1>Email:</h1>
-                <p>{props.user.email}</p>
-                <h1>Username:</h1>
-                <p>{props.user.username}</p>
-            </section>
-            <div>
-            {props.user.admin === true ? (<button onClick={() => props.history.push('/add-product')} >Add Products</button>) : (null)}
-            <button onClick={logout}>Logout</button>
+        <div className='account'>
+            <div className='form'>
+                <section className='user-info'>
+                    <h1>Email:</h1>
+                    <p>{props.user.email}</p>
+                    <h1>Username:</h1>
+                    <p>{props.user.username}</p>
+                </section>
+                <div>
+                {props.user.admin === true ? (<button onClick={() => props.history.push('/add-product')} >Add Products</button>) : (null)}
+                <button onClick={logout}>Logout</button>
+                </div>
             </div>
         </div>
     )

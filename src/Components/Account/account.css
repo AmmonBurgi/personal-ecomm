@@ -1,0 +1,20 @@
+.account{
+    width: 100vw;
+    height: 85.2vh;
+    padding-top: 65px;
+    display: flex;
+    justify-content: center;
+}
+.user-info{
+    color: #5098db;
+}
+.form button{
+    width: 130px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: white;
+    color: #5098db;
+    font-weight: bolder;
+    border: 2px solid #5098db;
+}

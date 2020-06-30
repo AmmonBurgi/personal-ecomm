@@ -13,7 +13,8 @@ const settings = {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false
+    arrows: false,
+    pauseOnHover: false
     // centerMode: true
 }
     return(
