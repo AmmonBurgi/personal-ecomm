@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {toast} from 'react-toastify'
+import './addProduct.css'
 
 function AddProduct(){
     const [proTitle, setProTitle] = useState(''),
@@ -26,6 +27,12 @@ function AddProduct(){
         } 
         axios.post('/api/add-product', {proTitle, description, price, proImg, brand, sport})
         .then(() => {
+            setProTitle('')
+            setDes('')
+            setPrice('')
+            setProImg('')
+            setBrand('')
+            setSport('')
             toast.info('Product has been added!')
         }).catch(err => {
             console.log(err)
@@ -33,29 +40,33 @@ function AddProduct(){
     }
 
     return (
-        <div style={{marginTop: '200px'}}>
-            <input placeholder='Title' value={proTitle} onChange={(e) => setProTitle(e.target.value)} />
-            <input placeholder='Description' value={description} onChange={(e) => setDes(e.target.value)} />
-            <input placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
-            <input placeholder='Image Address' value={proImg} onChange={(e) => setProImg(e.target.value)} />
-            <form onChange={(e) => setBrand(e.target.value)}>
-                <label htmlFor='brands'>Brand: </label>
-                    <select id='brands'>
-                        <option value=''>Select Brand</option>
-                        <option value='1'>Nike</option>
-                        <option value='2'>Under Armour</option>
-                        <option value='3'>Adidas</option>
-                    </select>
-            </form>
-            <form onChange={(e) => setSport(e.target.value)}>
-                <label htmlFor='sport'>Sport: </label>
-                    <select id='sport'>
-                        <option value=''>Select Sport</option>
-                        <option value='1'>Basketball</option>
-                        <option value='2'>FootBall</option>
-                    </select>
-            </form>
-            <button onClick={addPro}>Add Product!</button>
+        <div className='add-product'>
+            <section className='add-form'>
+                <input placeholder='Title' value={proTitle} onChange={(e) => setProTitle(e.target.value)} />
+                <textarea id='de-input' type='text' placeholder='Description' value={description} onChange={(e) => setDes(e.target.value)} />
+                <input placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
+                <input placeholder='Image Address' value={proImg} onChange={(e) => setProImg(e.target.value)} />
+                <span className='forms-group'>
+                    <form onChange={(e) => setBrand(e.target.value)}>
+                        <label htmlFor='brands'>Brand: </label>
+                            <select value={brand} id='brands'>
+                                <option value=''>Select Brand</option>
+                                <option value='1'>Nike</option>
+                                <option value='2'>Under Armour</option>
+                                <option value='3'>Adidas</option>
+                            </select>
+                    </form>
+                    <form onChange={(e) => setSport(e.target.value)}>
+                        <label htmlFor='sport'>Sport: </label>
+                            <select value={sport} id='sport'>
+                                <option value=''>Select Sport</option>
+                                <option value='1'>Basketball</option>
+                                <option value='2'>FootBall</option>
+                            </select>
+                    </form>
+                </span>
+                <button onClick={addPro}>Add Product!</button>
+            </section>
         </div>
     )
 }

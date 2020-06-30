@@ -1,0 +1,8 @@
+.landing{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100vw;
+    height: 92.7vh;
+    background-color: black;
+    position: relative;
+}
