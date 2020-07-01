@@ -8,10 +8,11 @@
 }
 .product-display{
     width: 80%;
-    height: 470px;
+    height: 100%;
     background-color: whitesmoke;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 1px #5098db;
+    overflow-wrap: break-word;
 }
 .product-img{
     width: 85%;
@@ -26,8 +27,16 @@
     position: absolute;
     left: 45px;
     top: 35px;
-    color: black;
+    color:#5098db;
 }
 .back-arrow:hover{
-    color: #5098db;
+    color: white;
+}
+.title-align{
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-description{
+    margin: 5px;
+    text-align: left;
 }

@@ -5,11 +5,12 @@
     padding-top: 80px;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 .add-form{
     box-sizing: border-box;
     border-radius: 5px;
-    width: 75%;
+    width: 83%;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -54,4 +55,14 @@
     background-color: black;
     color: white;
     border: 2px solid rgb(185, 185, 185);
+}
+.brand-select{
+    margin-right: 7px;
+}
+.back-arrow-add{
+    font-size: 30px;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    color:#5098db;
 }

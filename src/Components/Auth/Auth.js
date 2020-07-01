@@ -16,9 +16,9 @@ function Auth(props){
 const login = () => {
     axios.post('/api/login', {email, password})
     .then(res => {
-        console.log(res)
         props.getUser(res.data)
         props.history.push('/')
+        toast.info(`Welcome!`)
     }).catch(err => {
         console.log(err)
         toast.error(err.response.data)
@@ -30,6 +30,7 @@ const register = () => {
     .then(res => {
         props.getUser(res.data)
         props.history.push('/')
+        toast.info('Account Created!')
     }).catch(err => toast.error(err.response.data))
 }
 

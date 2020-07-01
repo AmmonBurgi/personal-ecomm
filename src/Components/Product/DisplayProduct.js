@@ -19,9 +19,11 @@ useEffect(() => {
             <FontAwesomeIcon onClick={props.history.goBack} className='back-arrow' icon={faArrowLeft}></FontAwesomeIcon>
             <section className='product-display'>
                 <img className='product-img' src={product.pro_img} alt={product.pro_title} />
-                <p className='product-title'>{product.pro_title}</p>
+                <span className='title-align'>
+                    <p className='product-title'>{product.pro_title}</p>
+                    <p className='product-price'>${product.price}</p>
+                </span>
                 <p className='product-description'>{product.description}</p>
-                <p className='product-price'>${product.price}</p>
             </section>
         </div>
     )

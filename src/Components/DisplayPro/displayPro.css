@@ -1,7 +1,7 @@
 .brand-display{
     box-sizing: border-box;
     width: 100vw;
-    height: 93vh;
+    height: 100%;
     display: flex;
     padding: 5%;
     padding-top: 18%;
@@ -18,8 +18,9 @@
     margin: 10px;
     padding: 1%;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px grey;
     position: relative;
+    box-shadow: 0px 0px 5px 2px #5098db;
+    overflow-wrap: break-word;
 }
 
 .pro-img{

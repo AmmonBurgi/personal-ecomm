@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import './addProduct.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 
-function AddProduct(){
+function AddProduct(props){
     const [proTitle, setProTitle] = useState(''),
         [description, setDes] = useState(''),
         [price, setPrice] = useState(''),
@@ -41,13 +43,14 @@ function AddProduct(){
 
     return (
         <div className='add-product'>
+            <FontAwesomeIcon onClick={props.history.goBack} className='back-arrow-add' icon={faArrowLeft}></FontAwesomeIcon>
             <section className='add-form'>
                 <input placeholder='Title' value={proTitle} onChange={(e) => setProTitle(e.target.value)} />
                 <textarea id='de-input' type='text' placeholder='Description' value={description} onChange={(e) => setDes(e.target.value)} />
                 <input placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
                 <input placeholder='Image Address' value={proImg} onChange={(e) => setProImg(e.target.value)} />
                 <span className='forms-group'>
-                    <form onChange={(e) => setBrand(e.target.value)}>
+                    <form className='brand-select' onChange={(e) => setBrand(e.target.value)}>
                         <label htmlFor='brands'>Brand: </label>
                             <select value={brand} id='brands'>
                                 <option value=''>Select Brand</option>

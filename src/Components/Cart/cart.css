@@ -1,14 +1,13 @@
 .brand-display{
     box-sizing: border-box;
     width: 100vw;
-    height: 93vh;
+    height: 100%;
     display: flex;
     padding: 5%;
     padding-top: 18%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: scroll;
 }
 
 .cart-product{
@@ -21,6 +20,7 @@
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 0px 5px 2px #5098db;
+    overflow: contain;
 }
 
 .pro-img{
