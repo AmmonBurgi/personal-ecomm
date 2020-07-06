@@ -68,5 +68,14 @@ module.exports = {
         db.pro.add_new_product(proTitle, description, price, proImg, parseInt(brand), parseInt(sport))
         .then(() => res.sendStatus(201))
         .catch(err => console.log(err))
+    },
+    getSearched: (req, res) => {
+        const db = req.app.get('db')
+        const {searchVal} = req.query
+
+        db.pro.get_search_pro(searchVal)
+        .then(products => {
+            res.status(200).send(products)
+        }).catch(err => console.log(err))
     }
 }

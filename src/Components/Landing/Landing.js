@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import SlideShow from '../SlideShow/SlideShow'
 import './landing.css'
@@ -6,16 +6,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'react-router-dom'
 
-
-
 function Landing(props){
-    const [searched, setSearch] = useState('')
+
+    // const getSearched = () => {
+    //     axios.get(`/api/pro-search/?searchVal=${searched}`)
+    //     .then(res => {
+    //         console.log(res.data)
+    //         setSearch('')
+    //         setPro(res.data)
+    //     }).catch(err => console.log(err))
+    // }
 
     return(
         <div className='landing'>
             <div className='search-box'>
-                <input onChange={(e) => setSearch(e.target.value)} className='search-text' type='text' placeholder='Search For Products' />
-                <Link to={{ pathname: '/search', state: {searchedVal: searched}}}><FontAwesomeIcon className='search-button' icon={faSearch}></FontAwesomeIcon></Link>
+                <Link to='/search'><FontAwesomeIcon className='search-button' icon={faSearch}></FontAwesomeIcon></Link>
             </div>
             <SlideShow />
         </div>

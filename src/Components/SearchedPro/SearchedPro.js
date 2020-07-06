@@ -1,18 +1,26 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
+import './searchedPro.css'
 
-function SearchedPro(props){
-    const [products, setPro] = useState([])
+function SearchedPro(){
+    const [searched, setSearch] = useState(''),
+        [mounted, setMount] = useState(false)
 
-    const getProducts = () => {
-        axios.get('/api/pro-search')
-    }
-    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMount(true)
+        }, 100);
+        return () => clearTimeout(timer)
+    }, [])
+
     return (
         <div style={{color: 'white'}}>
-            Searched Component
+            <div className={mounted === true ? ('pro-search-box') : ('pro-mount')}>
+                <input onChange={(e) => setSearch(e.target.value)} value={searched} className={mounted === true ? ('pro-search-text') : ('no-text')} type='text' placeholder='Search For Products' />
+                <FontAwesomeIcon className='pro-search-button' icon={faSearch}></FontAwesomeIcon>
+            </div>
         </div>
     )
 }
-
 export default SearchedPro

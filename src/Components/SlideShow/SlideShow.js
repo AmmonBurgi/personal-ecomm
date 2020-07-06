@@ -12,7 +12,7 @@ function SlideShow(props){
 const settings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2300,
     arrows: false,
     pauseOnHover: false
     // centerMode: true
