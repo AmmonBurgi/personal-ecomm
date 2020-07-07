@@ -36,6 +36,7 @@ function Cart(props){
     })
     return(
         <div className='brand-display'>
+            {cart.length === 0 ? (<p className='empty-cart'>Your Cart is empty! Go get yourself something nice!</p>) : (null)}
             {cartMap}
         </div>
     )

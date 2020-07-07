@@ -10,6 +10,9 @@ import UnderArmour from './Components/DisplayPro/UnderArmour'
 import DisplayProduct from './Components/Product/DisplayProduct'
 import AddProduct from './Components/AddProduct/AddProduct'
 import SearchedPro from './Components/SearchedPro/SearchedPro'
+import SelectEdit from './Components/SelectEdit/SelectEdit'
+import EditPro from './Components/EditPro/EditPro'
+// import {LastLocationProvider} from 'react-router-last-location'
 
 export default (
 <Switch>
@@ -23,5 +26,7 @@ export default (
     <Route path='/product/:id' component={DisplayProduct} />
     <Route path='/add-product' component={AddProduct} />
     <Route path='/search' component={SearchedPro} />
+    <Route path='/select-edit' component={SelectEdit} />
+    <Route path='/edit/:id' component={EditPro} />
 </Switch>
 )
