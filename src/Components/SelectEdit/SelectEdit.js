@@ -16,16 +16,19 @@ function SelectEdit(props){
     }
 
     const proMap = products.map((element, index) => {
-        return <div key={index}>
-                <img src={element.pro_img} alt={element.pro_title} />
-                <button onClick={() => props.history.push(`/edit/${element.product_id}`)}>Edit</button>
+        return <div className='select-product' key={index}>
+                <img className='select-img' src={element.pro_img} alt={element.pro_title} />
+                <p>{element.pro_title}</p>
+                <button className='select-button' onClick={() => props.history.push(`/edit/${element.product_id}`)}>Edit</button>
                </div>
     })
 
     return (
         <div className='select-edit'>
-            <input className='select-input' onChange={(e) => setSearch(e.target.value)} value={search} placeholder='Search the product you wish to edit!' />
-            <button onClick={searchProduct}>Search</button>
+            <span className='select-align'>
+                <input className='select-input' onChange={(e) => setSearch(e.target.value)} value={search} placeholder='Search Products!' />
+                <button onClick={searchProduct}>Search</button>
+            </span>
             {proMap}
         </div>
     )

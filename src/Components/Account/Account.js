@@ -26,7 +26,7 @@ function Account(props){
                     <p>{props.user.username}</p>
                 </section>
                 <div>
-                {props.user.admin === true ? (<button onClick={() => props.history.push('/select-edit')} ></button>):(null)}
+                {props.user.admin === true ? (<button onClick={() => props.history.push('/select-edit')} >Edit Products</button>):(null)}
                 {props.user.admin === true ? (<button onClick={() => props.history.push('/add-product')} >Add Products</button>) : (null)}
                 <button onClick={logout}>Logout</button>
                 </div>
