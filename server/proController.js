@@ -81,10 +81,15 @@ module.exports = {
     editPro: (req, res) => {
         const db = req.app.get('db')
         const {id} = req.params
-        console.log(req.body)
         const {img, title, proPrice, proDesc, brandId, sportId} = req.body
-        console.log(id, img, title, proPrice, proDesc, brandId, sportId)
         db.pro.edit_pro(img, title, proPrice, proDesc, id, brandId, sportId)
+        .then(() => res.sendStatus(200))
+        .catch(err => console.log(err))
+    },
+    deleteProduct: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.pro.delete_product(id)
         .then(() => res.sendStatus(200))
         .catch(err => console.log(err))
     }

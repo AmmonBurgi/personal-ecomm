@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './editPro.css'
 import { toast } from 'react-toastify'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 
 function EditPro(props){
     const [product, setProduct] = useState({}),
@@ -65,16 +67,25 @@ function EditPro(props){
         }).catch(err => console.log(err))
     }
 
+    const deleteProduct = () => {
+        axios.delete(`/api/product/${product.product_id}`)
+        .then(() => {
+            props.history.push('/select-edit')
+            toast.info('Removed Product!')
+        }).catch(err => console.log(err))
+    }
+
     return (
         <div className='editPro'>
-            <section>
-                <img src={proImg} alt={product.pro_title} />
+            <FontAwesomeIcon onClick={props.history.goBack} className='back-arrow-edit' icon={faArrowLeft}></FontAwesomeIcon>
+            <section className='edit-form'>
+                <button onClick={deleteProduct} className='delete-button'>X</button>
                 <input onChange={(e) => setProImg(e.target.value)} defaultValue={product.pro_img} placeholder='Image Address' />
                 <input onChange={(e) => setProTitle(e.target.value)} defaultValue={product.pro_title} placeholder='Title' />
                 <input onChange={(e) => setPrice(e.target.value)} defaultValue={product.price} placeholder='Price' />
                 <input onChange={(e) => setDescription(e.target.value)} defaultValue={product.description} placeholder='Description' />
-                <form className='brand-select' onChange={(e) => setBrand(e.target.value)}>
-                        <label htmlFor='brands'>Brand: </label>
+                <span className='edit-align'>
+                    <form className='brand-select' onChange={(e) => setBrand(e.target.value)}>
                             <select value={brand} id='brands'>
                                 <option value=''>Select Brand</option>
                                 <option value='1'>Nike</option>
@@ -83,15 +94,15 @@ function EditPro(props){
                             </select>
                     </form>
                     <form onChange={(e) => setSport(e.target.value)}>
-                        <label htmlFor='sport'>Sport: </label>
                             <select value={sport} id='sport'>
                                 <option value=''>Select Sport</option>
                                 <option value='1'>Basketball</option>
                                 <option value='2'>FootBall</option>
-                            </select>
+                             </select>
                     </form>
+                </span>
+                <button className='confirm-button' onClick={editProduct}>Confirm</button>
             </section>
-            <button onClick={editProduct}>Confirm</button>
         </div>
     )
 }

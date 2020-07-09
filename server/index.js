@@ -33,6 +33,7 @@ const express = require('express'),
     app.post('/api/add-product', proCtrl.addProduct)
     app.get('/api/pro-search', proCtrl.getSearched)
     app.put('/api/edit/:id', proCtrl.editPro)
+    app.delete('/api/product/:id', proCtrl.deleteProduct)
 
     massive({
         connectionString: CONNECTION_STRING,
