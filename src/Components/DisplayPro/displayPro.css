@@ -58,3 +58,15 @@
 .pro-title{
     font-size: 20px;
 }
+@media (min-width: 768px){
+    .product{
+        height: 400px;
+    }
+    .pro-img{
+        height: 260px;
+    }
+    #display-title{
+        font-size: 27px;
+        bottom: 15%;
+    }
+}

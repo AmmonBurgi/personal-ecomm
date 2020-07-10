@@ -19,7 +19,7 @@ justify-content: space-evenly;
 flex-direction: row;
 width: 67%;
 height: 100%;
-margin-top: 24px;
+margin-top: 18px;
 }
 
 .user-nav{
@@ -85,4 +85,29 @@ color: black;
 }
 .link{
     text-decoration: none;
+}
+@media (min-width: 768px){
+    .navbar{
+        height: 9vh;
+    }
+    .title h1{
+        font-size: 20px;
+    }
+    .title p{
+        font-size: 18px;
+    }
+    .title:hover h1{
+        border-bottom: solid black 6px;
+        color: black;
+    }
+    .home-icon{
+        font-size: 40px;
+    }
+    .shopping-cart{
+        font-size: 37px;
+        margin-right: 12px;
+    }
+    .user-circle{
+        font-size: 37px;
+    }
 }
