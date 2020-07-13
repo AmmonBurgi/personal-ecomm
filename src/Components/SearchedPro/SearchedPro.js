@@ -10,11 +10,12 @@ function SearchedPro(props){
     const [searched, setSearch] = useState(''),
         [mounted, setMount] = useState(false),
         [searchedProducts, setSearchedPro] = useState([])
-
+        
     const getSearchedPro = () => {
         axios.get(`/api/pro-search/?searchVal=${searched}`)
         .then(res => {
             setSearchedPro(res.data)
+            
             setSearch('')
         }).catch(err => console.log(err))
     }

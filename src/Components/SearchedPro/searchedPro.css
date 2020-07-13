@@ -107,6 +107,7 @@
     margin-left: auto;
     margin-right: auto;
     bottom: 20%;
+    font-weight: bolder;
     
 }
 .search-cart-button{
@@ -122,4 +123,36 @@
     color: #5098db;
     font-weight: bolder;
     border: 2px solid #5098db;
+}
+.no-pro{
+    color: white;
+    font-size: 20px;
+}
+@media (min-width: 768px){
+    .pro-search-button{
+        height: 65px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 35px;
+    }
+    .pro-search-text{
+        width: 270px;
+        font-size: 20px;
+    }
+    .pro-search-box{
+        top: 215px;
+    }
+    .pro-mount{
+        top: 275px;
+    }
+    .search-product{
+        top: 180px;
+        height: 370px;
+    }
+    .search-pro-img{
+        height: 260px;
+    }
+    .search-pro-title{
+        bottom: 15%;
+    }
 }

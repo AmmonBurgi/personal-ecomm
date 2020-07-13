@@ -62,7 +62,29 @@
 .back-arrow-add{
     font-size: 30px;
     position: absolute;
-    left: 40px;
+    left: 70px;
     top: 30px;
     color:#5098db;
+}
+@media (min-width: 768px){
+    .add-form{
+        height: 550px;
+    }
+    .add-form button{
+        font-size: 22px;
+    }
+    .add-form input{
+        margin-bottom: 20px;
+        height: 35px;
+    }
+    #de-input{
+        margin-bottom: 20px;
+    }
+    .forms-group select{
+        padding-right: 5px;
+        font-size: 17px;
+    }
+    .brand-select{
+        margin-right: 25px;
+    }
 }

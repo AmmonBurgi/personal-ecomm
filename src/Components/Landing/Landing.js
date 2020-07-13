@@ -8,15 +8,6 @@ import {Link} from 'react-router-dom'
 
 function Landing(props){
 
-    // const getSearched = () => {
-    //     axios.get(`/api/pro-search/?searchVal=${searched}`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         setSearch('')
-    //         setPro(res.data)
-    //     }).catch(err => console.log(err))
-    // }
-
     return(
         <div className='landing'>
             <div className='search-box'>

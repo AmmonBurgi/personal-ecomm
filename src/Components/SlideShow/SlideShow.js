@@ -14,21 +14,26 @@ const settings = {
     autoplay: true,
     autoplaySpeed: 2300,
     arrows: false,
-    pauseOnHover: false
+    pauseOnHover: false,
+    // adaptiveHeight: true,
+    // centerMode: true,
+    // centerPadding: '0px'
     // centerMode: true
 }
     return(
+        <div className='align-slide'>
         <Slider {...settings} className='slider'>
             <div>
-                <img className='logo' src={nike} alt='nike' />
+                <img className='logo' id='nike' src={nike} alt='nike' />
             </div>
             <div>
                 <img className='logo' id='ua' src={ua} alt='Under Armour' />
             </div>
             <div>
-                <img className='logo' src={adidas} alt='adidas' />
+                <img className='logo' id='adidas' src={adidas} alt='adidas' />
             </div>
         </Slider>
+        </div>
     )
 }
 export default SlideShow

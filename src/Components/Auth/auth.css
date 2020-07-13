@@ -56,6 +56,9 @@
 }
 
 @media (min-width: 768px){
+    .auth{
+        height: 91vh;
+    }
     .form{
         width: 62vw;
     }

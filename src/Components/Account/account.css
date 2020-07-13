@@ -1,7 +1,7 @@
 .account{
     width: 100vw;
     height: 85.2vh;
-    padding-top: 65px;
+    /* padding-top: 65px; */
     display: flex;
     justify-content: center;
 }
@@ -22,6 +22,10 @@
 .form button{
 font-size: 25px;
 width: 150px;
+}
+.account{
+ box-sizing: border-box;
+ height: 91vh;
 }
 #account-button{
     width: 300px;

@@ -29,13 +29,13 @@ function Cart(props){
         return <div className='cart-product' key={index}>
                 <div onClick={() => props.history.push(`/product/${element.product_id}`)}>
                     <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
-                    <p className='pro-title'>{element.pro_title}</p>
+                    <p id='cart-title' className='pro-title'>{element.pro_title}</p>
                 </div>
                  <button className='cart-button' onClick={() => deleteCart(element.product_id)}>X</button>
                </div>
     })
     return(
-        <div className='brand-display'>
+        <div className='cart-pro-display'>
             {cart.length === 0 ? (<p className='empty-cart'>Your Cart is empty! Go get yourself something nice!</p>) : (null)}
             {cartMap}
         </div>
