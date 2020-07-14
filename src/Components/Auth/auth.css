@@ -76,3 +76,8 @@
         font-size: 25px;
     }
 }
+@media (min-width: 1024px){
+    .form{
+        padding-top: 25px;
+    }
+}

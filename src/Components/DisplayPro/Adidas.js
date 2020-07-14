@@ -31,7 +31,7 @@ props.history.push(`/product/${id}`)
 }
 
 const proMap = product.map((element, index) => {
-    return <div className='product' key={index}>
+    return <div  className='product' key={index}>
             <div onClick={() => navProduct(element.product_id)}>
                 <img className='pro-img'  src={element.pro_img}  alt={element.pro_title}/>
                 <p className='pro-title' id='display-title'>{element.pro_title}</p>
@@ -40,7 +40,7 @@ const proMap = product.map((element, index) => {
            </div>
 })
     return(
-        <div className='brand-display'>
+        <div id='brand-com' className='brand-display'>
             {proMap}
         </div>
     )

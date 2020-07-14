@@ -8,7 +8,7 @@
 }
 .search-box{
     position: absolute;
-    top: 235px;
+    top: 225px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: blue;

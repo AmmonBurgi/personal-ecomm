@@ -1,6 +1,6 @@
 .pro-search-box{
     position: absolute;
-    top: 185px;
+    top: 170px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: blue;
@@ -14,7 +14,7 @@
 }
 .pro-mount{
     position: absolute;
-    top: 235px;
+    top: 225px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: blue;
@@ -140,13 +140,13 @@
         font-size: 20px;
     }
     .pro-search-box{
-        top: 215px;
+        top: 245px;
     }
     .pro-mount{
         top: 275px;
     }
     .search-product{
-        top: 180px;
+        top: 205px;
         height: 370px;
     }
     .search-pro-img{

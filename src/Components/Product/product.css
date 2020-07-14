@@ -40,3 +40,25 @@
     margin: 5px;
     text-align: left;
 }
+@media (min-width: 768px){
+    .back-arrow{
+        font-size: 35px;
+        left: 80px;
+        top: 40px;
+    }
+    .product-view{
+        padding-top: 120px;
+    }
+    .product-display p{
+        font-size: 25px;
+    }
+}
+@media (min-width: 1024px){
+    .product-img{
+        height: 420px;
+    }
+    .back-arrow{
+        left: 105px;
+        top: 45px;
+    }
+}

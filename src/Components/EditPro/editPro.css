@@ -60,3 +60,39 @@
     top: 105px;
     color:#5098db;
 }
+@media (min-width: 768px){
+    .edit-form{
+        height: 600px;
+        top: 115px;
+    }
+    .back-arrow-edit{
+        font-size: 35px;
+        left: 75px;
+        top: 130px;
+    }
+    .edit-form input{
+        font-size: 17px;
+        padding: 10px;
+    }
+    .delete-button{
+        font-size: 25px;
+        top: 15px;
+        right: 15px;
+    }
+    .edit-align select{
+        font-size: 15px;
+        width: 175px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .confirm-button{
+        font-size: 25px;
+        padding: 15px;
+    }
+}
+@media (min-width: 1024px){
+    .back-arrow-edit{
+        left: 105px;
+        top: 125px;
+    }
+}

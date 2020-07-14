@@ -71,3 +71,14 @@
     }
     
 }
+@media (min-width: 1024px){
+    #brand-com{
+        padding-top: 10%;
+    }
+    .product{
+        height: 450px;
+    }
+    .pro-img{
+        height: 300px;
+    }
+}

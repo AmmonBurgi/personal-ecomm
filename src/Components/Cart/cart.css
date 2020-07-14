@@ -64,4 +64,19 @@
     .cart-pro-display{
         padding-top: 12%;
     }
+    .empty-cart{
+        font-size: 25px;
+    }
+}
+@media (min-width: 1024px){
+    .cart-product{
+        height: 440px;
+    }
+    #cart-title{
+        bottom: 60px;
+    }
+    .cart-button{
+        font-size: 20px;
+        width: 180px;
+    }
 }

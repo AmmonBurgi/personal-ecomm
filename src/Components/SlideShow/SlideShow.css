@@ -31,3 +31,11 @@
     #adidas{
     }
 }
+@media (min-width: 1024px){
+    .align-slide{
+        width: 65%;
+    }
+    #ua{
+        margin-top: 70px;
+    }
+}

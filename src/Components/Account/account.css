@@ -30,4 +30,7 @@ width: 150px;
 #account-button{
     width: 300px;
 }
+.user-info{
+    font-size: 25px;
+}
 }

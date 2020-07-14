@@ -40,7 +40,7 @@ const proMap = product.map((element, index) => {
            </div>
 })
     return(
-        <div className='brand-display'>
+        <div id='brand-com' className='brand-display'>
             {proMap}
         </div>
     )

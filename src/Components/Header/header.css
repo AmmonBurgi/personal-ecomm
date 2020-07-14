@@ -20,6 +20,7 @@ flex-direction: row;
 width: 67%;
 height: 100%;
 margin-top: 18px;
+/* background-color: cornflowerblue; */
 }
 
 .user-nav{
@@ -29,20 +30,21 @@ right: 2%;
 
 .title{
 width: 150px;
-height: 150px;
+height: 110px;
+/* background-color: grey; */
 }
 
 .title h1{
     transition: .2s;
     font-size: 12px;
-    padding-bottom: 17px;
+    padding-bottom: 11px;
     color: #5098db;
     font-weight: bolder;
 }
 
 .title p{
     display: none;
-    font-size: 17px;
+    font-size: 16px;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #5098db;
@@ -60,7 +62,7 @@ height: 150px;
 .home-icon{
 position: absolute;
 left: 2%;
-top: 19px;
+top: 13px;
 font-size: 30px;
 color: #5098db;
 transition: .5s;
@@ -90,18 +92,23 @@ color: black;
     .navbar{
         height: 9vh;
     }
+    .title{
+        height: 165px;
+    }
     .title h1{
         font-size: 20px;
+        padding-bottom: 25px;
     }
     .title p{
-        font-size: 18px;
+        font-size: 22px;
     }
     .title:hover h1{
-        border-bottom: solid black 6px;
+        border-bottom: solid black 8px;
         color: black;
     }
     .home-icon{
-        font-size: 40px;
+        top: 25px;
+        font-size: 45px;
     }
     .shopping-cart{
         font-size: 37px;
@@ -109,5 +116,19 @@ color: black;
     }
     .user-circle{
         font-size: 37px;
+    }
+    .brands{
+        margin-top: 32px;
+    }
+}
+@media (min-width: 1024px){
+    .brands{
+        margin-top: 20px;
+    }
+    .title h1{
+        padding-bottom: 20px;
+    }
+    .home-icon{
+        top: 18px;
     }
 }
