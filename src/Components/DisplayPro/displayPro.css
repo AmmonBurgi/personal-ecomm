@@ -82,3 +82,13 @@
         height: 300px;
     }
 }
+@media (min-width: 1280px){
+    .product{
+        height: 480px;
+        width: 65%;
+    }
+    .pro-img{
+        height: 330px;
+        width: 70%;
+    }
+}

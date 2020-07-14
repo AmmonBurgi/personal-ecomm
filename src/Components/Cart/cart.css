@@ -44,6 +44,9 @@
     font-weight: bolder;
     border: 2px solid #5098db;
 }
+.cart-button:hover{
+background-color: black;
+}
 .empty-cart{
     color: white;
     font-size: 20px;
@@ -69,6 +72,7 @@
     }
 }
 @media (min-width: 1024px){
+
     .cart-product{
         height: 440px;
     }
@@ -78,5 +82,17 @@
     .cart-button{
         font-size: 20px;
         width: 180px;
+    }
+    .cart-pro-display{
+        padding-top: 10%;
+    }
+}
+@media (min-width: 1280px){
+    .cart-product{
+        width: 60%;
+        height: 500px;
+    }
+    .cart-pro-display{
+        padding-top: 8%;
     }
 }

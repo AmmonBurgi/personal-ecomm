@@ -83,6 +83,10 @@ border: 2px solid #5098db;
     border: 2px solid #5098db;
     font-weight: bolder;
 }
+.select-align button:hover{
+    background-color: black;
+    color: white;
+}
 @media (min-width: 768px){
     .select-align{
         top: 195px;
@@ -125,5 +129,10 @@ border: 2px solid #5098db;
     }
     .select-product button{
         font-size: 25px;
+    }
+}
+@media (min-width: 1280px){
+    .select-product{
+        width: 55%;
     }
 }

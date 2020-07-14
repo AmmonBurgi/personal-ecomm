@@ -66,6 +66,9 @@
     top: 30px;
     color:#5098db;
 }
+.back-arrow-add:hover{
+    color: white;
+}
 @media (min-width: 768px){
     .add-product{
         padding-top: 110px;
@@ -109,5 +112,16 @@
 @media (min-width: 1024px){
     .back-arrow-add{
         left: 95px;
+    }
+    .add-product{
+        height: 91vh;
+    }
+}
+@media (min-width: 1280px){
+    .back-arrow-add{
+        left: 125px;
+    }
+    .add-form{
+        height: 620px;
     }
 }

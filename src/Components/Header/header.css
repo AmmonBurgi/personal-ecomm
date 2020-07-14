@@ -52,6 +52,9 @@ height: 110px;
 .title:hover p{
     display: flex;
 }
+.title p:hover{
+    color: white;
+}
 .title:hover h1{
     border-bottom: solid black 4px;
     color: black;

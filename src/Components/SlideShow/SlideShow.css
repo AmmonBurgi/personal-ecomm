@@ -39,3 +39,8 @@
         margin-top: 70px;
     }
 }
+@media (min-width: 1280px){
+    .align-slide{
+        width: 45%;
+    }   
+}
