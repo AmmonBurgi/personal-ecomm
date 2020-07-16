@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './cart.css'
 import { toast } from 'react-toastify'
+import {Link} from 'react-router-dom'
 
 function Cart(props){
     const [cart, setCart] = useState([])
@@ -22,6 +23,7 @@ function Cart(props){
         .then(() => {
             toast.info('Removed from Cart!')
             getCart()
+            getTotal()
         }).catch(err => console.log(err))
     }
 
@@ -34,8 +36,21 @@ function Cart(props){
                  <button className='cart-button' onClick={() => deleteCart(element.product_id)}>X</button>
                </div>
     })
+
+    function getTotal(){
+        let total = 0
+        cart.forEach((element) => {
+                total += element.price
+        })
+        return total
+    }
+
     return(
         <div className='cart-pro-display'>
+            <span className='purchase-total'>
+                <p className='cart-total'>Total: ${getTotal()}</p>
+                <Link to={{pathname: '/checkout', state: `${getTotal()}`}}><button>Checkout</button></Link>
+            </span>
             {cart.length === 0 ? (<p className='empty-cart'>Your Cart is empty! Go get yourself something nice!</p>) : (null)}
             {cartMap}
         </div>

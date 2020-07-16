@@ -5,6 +5,7 @@ const express = require('express'),
     {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
     authCtrl = require('./authController'),
     proCtrl = require('./proController'),
+    strCtrl = require('./stripeController'),
     port = SERVER_PORT,
     app = express()
     
@@ -34,6 +35,9 @@ const express = require('express'),
     app.get('/api/pro-search', proCtrl.getSearched)
     app.put('/api/edit/:id', proCtrl.editPro)
     app.delete('/api/product/:id', proCtrl.deleteProduct)
+
+    //stripe endpoints
+    app.get('/api/payment_intent/:price', strCtrl.payIntent)
 
     massive({
         connectionString: CONNECTION_STRING,

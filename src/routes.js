@@ -12,6 +12,7 @@ import AddProduct from './Components/AddProduct/AddProduct'
 import SearchedPro from './Components/SearchedPro/SearchedPro'
 import SelectEdit from './Components/SelectEdit/SelectEdit'
 import EditPro from './Components/EditPro/EditPro'
+import Payment from './Components/Payment/Payment'
 // import {LastLocationProvider} from 'react-router-last-location'
 
 export default (
@@ -28,5 +29,6 @@ export default (
     <Route path='/search' component={SearchedPro} />
     <Route path='/select-edit' component={SelectEdit} />
     <Route path='/edit/:id' component={EditPro} />
+    <Route path='/checkout' component={Payment} />
 </Switch>
 )
