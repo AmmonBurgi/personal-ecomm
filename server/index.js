@@ -37,7 +37,7 @@ const express = require('express'),
     app.delete('/api/product/:id', proCtrl.deleteProduct)
 
     //stripe endpoints
-    app.get('/api/payment_intent/:price', strCtrl.payIntent)
+    app.get('/api/intent/', strCtrl.payIntent)
 
     massive({
         connectionString: CONNECTION_STRING,

@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import {HashRouter} from 'react-router-dom'
 import {Provider} from 'react-redux'
+import {Elements} from '@stripe/react-stripe-js'
+import {loadStripe} from '@stripe/stripe-js'
 import store from './redux/store'
 import * as serviceWorker from './serviceWorker';
+
+const stripePromise = loadStripe(`${process.env.PUBLISHABLE_KEY}`)
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store} >
       <HashRouter>
-        <App />
+        <Elements stripe={stripePromise} >
+          <App />
+        </Elements>
       </HashRouter>
     </Provider>
   </React.StrictMode>,

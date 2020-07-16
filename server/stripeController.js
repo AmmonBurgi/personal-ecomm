@@ -1,7 +1,8 @@
-const stripe = require('stripe')(`${process.env.PUBLISHABLE_KEY}`)
+const stripe = require('stripe')(`${process.env.STRIPE_SECRET}`)
 module.exports = {
     payIntent: async (req, res) => {
-        const {price} = req.params
+        const {price} = req.query
+        console.log(price)
         const paymentIntent = await stripe.paymentIntents.create({
             amount: price,
             currency: 'usd',
