@@ -3,7 +3,8 @@ import axios from 'axios'
 import './cart.css'
 import { toast } from 'react-toastify'
 import {Link} from 'react-router-dom'
-
+import {connect} from 'react-redux'
+ 
 function Cart(props){
     const [cart, setCart] = useState([])
 
@@ -14,8 +15,22 @@ function Cart(props){
     }).catch(err => console.log(err))
     }
 
+    const deleteAllCart = () => {
+        const {user_id} = props.user
+        axios.delete(`/api/empty-cart/?id=${user_id}`)
+        .then(() => {
+            console.log('Payment complete! Cleared Cart!')
+            getCart()
+        })
+        .catch(err => console.log(err))
+    }
+
     useEffect(() => {
-    getCart()
+        // console.log(props.location)
+        if(props.location.state === '/checkout'){
+            deleteAllCart()
+        } else {getCart()}
+    
     }, [])
 
     const deleteCart = (pro_id) => {
@@ -57,4 +72,6 @@ function Cart(props){
     )
 }
 
-export default Cart
+const mapStateToProps = (reduxState) => reduxState
+
+export default connect(mapStateToProps)(Cart)

@@ -1,32 +1,21 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {CardElement, useElements, useStripe} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import {toast} from 'react-toastify'
-
-// const stripePromise = loadStripe(`${process.env.PUBLISHABLE_KEY}`)
+import './payment.css'
 
 function Payment(props){
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
   const stripe = useStripe()
   const elements = useElements()
-  // const [clientSecret, setClientSecret] = useState('')
-
-  useEffect(() => {
-    // const price = props.location.state
-    // console.log(price)
-    // axios.get(`/api/intent/?price=${price}`)
-    // .then(res => {
-    //   console.log(res.data)
-    //   setClientSecret(res.data)
-    // })
-  }, [])
 
   const confirmPayment = () => {
-    // console.log(clientSecret, 'clientSecreteeee')
     const price = props.location.state
-    console.log(price)
-    axios.get(`/api/intent/?price=${price}`)
+    // console.log(price)
+    axios.get(`/api/intent/?price=${price}&&email=${email}`)
     .then(async (res) => {
-      console.log(res.data)
+      // console.log(res.data)
       const result = await stripe.confirmCardPayment(res.data, {
         payment_method: {
           card: elements.getElement(CardElement)
@@ -35,24 +24,41 @@ function Payment(props){
       if(result.error){
         toast.info(result.error.message)
         console.log(result.error)
-        console.log(result)
+        // console.log(result)
       } else {
         if(result.paymentIntent.status === 'succeeded'){
           toast.info('Your purchase was successful!')
         }
       }
-      
-      // setClientSecret(res.data)
+      props.history.push({pathname: '/cart', state: props.location.pathname})
     }).catch(err => console.log(err))
   }
 
     return (
-      <div style={{backgroundColor: 'white', marginTop: '200px'}}>
-          {/* <Elements stripe={stripePromise}> */}
-            <CardElement />
-            <button onClick={confirmPayment}>Purchase</button>
-            {/* </Elements> */}
-            </div>
+      <div className='payment-card'>
+            <input placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+            <input placeholder='Customers Name' onChange={(e) => setName(e.target.value)} />
+            <CardElement 
+                className='card-element'
+                options={{
+                  hidePostalCode: true,
+                  style: {
+                    base: {
+                      fontSize: '12px',
+                      backgroundColor: 'white',
+                      color: '#424770',
+                      '::placeholder': {
+                        color: '#aab7c4',
+                      },
+                    },
+                    invalid: {
+                      color: '#9e2146',
+                    },
+                  },
+                }}  
+            />
+            <button className='payment-button' onClick={confirmPayment}>Purchase</button>
+      </div>
     )
 }
 export default Payment

@@ -1,0 +1,32 @@
+.payment-card{
+    box-sizing: border-box;
+    position: absolute;
+    width: 75%;
+    background-color: whitesmoke;
+    height: 300px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 120px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 5px 2px #5098db;
+    border-radius: 5px;
+}
+.payment-card input{
+    border: 1px solid #5098db;
+    padding: 5px;
+}
+.card-element{
+    border: 1px solid #5098db;
+    padding: 7px;
+}
+.payment-button{
+    padding: 10px;
+    border: 2px solid #5098db;
+    background-color: white;
+    font-weight: bolder;
+}

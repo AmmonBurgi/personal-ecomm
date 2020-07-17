@@ -35,6 +35,7 @@ const express = require('express'),
     app.get('/api/pro-search', proCtrl.getSearched)
     app.put('/api/edit/:id', proCtrl.editPro)
     app.delete('/api/product/:id', proCtrl.deleteProduct)
+    app.delete('/api/empty-cart/', proCtrl.deleteAllCart)
 
     //stripe endpoints
     app.get('/api/intent/', strCtrl.payIntent)

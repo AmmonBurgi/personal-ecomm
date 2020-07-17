@@ -92,5 +92,12 @@ module.exports = {
         db.pro.delete_product(id)
         .then(() => res.sendStatus(200))
         .catch(err => console.log(err))
+    },
+    deleteAllCart: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.query
+        db.pro.delete_all_cart(id)
+        .then(() => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 }
