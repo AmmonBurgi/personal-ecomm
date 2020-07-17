@@ -45,7 +45,7 @@ function Cart(props){
     const cartMap = cart.map((element, index) => {
         return <div className='cart-product' key={index}>
                 <div onClick={() => props.history.push(`/product/${element.product_id}`)}>
-                    <img className='pro-img' src={element.pro_img} alt={element.pro_title} />
+                    <img className='pro-img' id='pro-cart-img' src={element.pro_img} alt={element.pro_title} />
                     <p id='cart-title' className='pro-title'>{element.pro_title}</p>
                 </div>
                  <button className='cart-button' onClick={() => deleteCart(element.product_id)}>X</button>

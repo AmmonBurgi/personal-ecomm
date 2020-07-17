@@ -125,3 +125,12 @@
         height: 620px;
     }
 }
+@media (min-width: 1440px){
+    .add-form{
+        width: 52%;
+    }
+    .back-arrow-add{
+        left: 520px;
+        top: 37px;
+    }
+}

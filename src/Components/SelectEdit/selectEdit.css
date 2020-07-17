@@ -136,3 +136,13 @@ border: 2px solid #5098db;
         width: 55%;
     }
 }
+@media (min-width: 1440px){
+    .select-product{
+        width: 48%;
+        height: 400px;
+    }
+    .select-product img{
+        height: 260px;
+        width: 360px;
+    }
+}

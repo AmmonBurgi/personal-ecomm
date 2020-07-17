@@ -37,3 +37,8 @@ width: 150px;
     font-size: 25px;
 }
 }
+@media (min-width: 1440px){
+ .form button{
+     font-size: 30px;
+ }   
+}

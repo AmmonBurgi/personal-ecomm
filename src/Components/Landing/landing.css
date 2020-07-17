@@ -56,3 +56,8 @@
         top: 275px;
     }
 }
+@media (min-width: 1440px){
+    .search-box{
+        top: 300px;
+    }
+} 

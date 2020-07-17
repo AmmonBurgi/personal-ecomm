@@ -8,7 +8,7 @@
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 120px;
+    top: 130px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -29,4 +29,38 @@
     border: 2px solid #5098db;
     background-color: white;
     font-weight: bolder;
+}
+.payment-button:hover{
+    background-color: black;
+    color: white;
+}
+.test-card{
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px;
+}
+@media (min-width: 768px){
+    .payment-card{
+        top: 210px;
+        width: 62vw;
+    }
+    .payment-card input{
+        padding: 7px;
+        font-size: 17px;
+    }
+    .payment-button{
+        font-size: 20px;
+    }
+    .test-card{
+        font-size: 17px;
+    }
+}
+@media (min-width: 1280px){
+    .payment-card{
+        width: 55vw;
+    }
 }

@@ -173,3 +173,22 @@
         font-size: 19px;
     }
 }
+@media (min-width: 1440px){
+    .pro-search-text{
+        width: 320px;
+    }
+    .pro-mount{
+        top: 300px;
+    }
+    .pro-search-box{
+        top: 255px;
+    }
+    .search-product{
+        width: 42%;
+        height: 480px;
+    }
+    .search-pro-img{
+        height: 320px;
+        width: 75%;
+    }
+}

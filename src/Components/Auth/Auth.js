@@ -26,6 +26,17 @@ const login = () => {
 }
 
 const register = () => {
+    if(email.length === 0){
+        return toast.info('Email is required!')
+    }
+    if(username.length === 0){
+        return toast.info('Username is required!')
+    }
+    if(password.length === 0){
+        return toast.info('Password is required!')
+    } else if (password.length < 5){
+        return toast.info('Password must be at least 5 characters long!')
+    }
     axios.post('/api/register', {email, username, password, adminPass})
     .then(res => {
         props.getUser(res.data)
@@ -57,7 +68,7 @@ const register = () => {
                 setToggle(!toggle)}}>Login</p></span>
             </section>
             )}
-            {admin === true ? (<p className='admin-text'>Admin password is 'adminPassCode'. Being an admin allows the user to add products.</p>) : (null)}
+            {admin === true ? (<p className='admin-text'>Admin password is 'adminPassCode'. Being an admin allows the user to add and edit products.</p>) : (null)}
         </div>
     )
 }

@@ -44,3 +44,12 @@
         width: 45%;
     }   
 }
+@media (min-width: 1440px){
+    .align-slide{
+        width: 50%;
+        top: -230px;
+    }   
+    #ua{
+        margin-top: 265px;
+    }
+}

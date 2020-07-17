@@ -43,18 +43,21 @@
 }
 .check-text{
     position: absolute;
-    top: 10px;
-    left: 17px;
+    top: 2px;
+    left: 14px;
     display: flex;
     width: 100px;
     justify-content: center;
     align-items: center;
 }
+.check-text input{
+    width: 20px;
+    height: 10px;
+}
 .admin-text{
     position: absolute;
-
+    color: white;
 }
-
 @media (min-width: 768px){
     .auth{
         height: 91vh;
@@ -75,9 +78,55 @@
     .form p{
         font-size: 25px;
     }
+    .admin-text{
+        font-size: 18px;
+    }
+    .check-text{
+        left: 37px;
+    }
+    .check-text input{
+        height: 15px;
+        width: 15px;
+    }
 }
 @media (min-width: 1024px){
     .form{
         padding-top: 25px;
+    }
+}
+@media (min-width: 1280px){
+    .check-text{
+        left: 55px;
+        align-items: flex-end;
+    }
+    .check-text input{
+        width: 100px;
+        height: 20px;
+    }
+}
+@media (min-width: 1440px){
+    .form{
+        width: 48%;
+        height: 45vh;
+    }
+    .form p{
+        font-size: 30px;
+    }
+    .form span{
+        font-size: 30px;
+    }
+    .form-button{
+        font-size: 30px;
+    }
+    .check-text{
+        width: 100px;
+        left: 62px;
+    }
+    .check-text span{
+        font-size: 25px;
+    }
+    .check-text input{
+        /* width: 100px; */
+        height: 20px;
     }
 }

@@ -110,3 +110,12 @@
         left: 145px;
     }
 }
+@media (min-width: 1440px){
+    .edit-form{
+        width: 52%;
+    }
+    .back-arrow-edit{
+        left: 520px;
+        top: 140px;
+    }
+}

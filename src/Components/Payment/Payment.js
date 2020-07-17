@@ -44,7 +44,7 @@ function Payment(props){
                   hidePostalCode: true,
                   style: {
                     base: {
-                      fontSize: '12px',
+                      fontSize: '17px',
                       backgroundColor: 'white',
                       color: '#424770',
                       '::placeholder': {
@@ -58,6 +58,7 @@ function Payment(props){
                 }}  
             />
             <button className='payment-button' onClick={confirmPayment}>Purchase</button>
+            <p className='test-card'>Test Card Number: 4242 4242 4242 4242</p>
       </div>
     )
 }

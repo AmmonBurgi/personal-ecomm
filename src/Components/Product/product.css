@@ -70,3 +70,14 @@
         left: 220px;
     }
 }
+@media (min-width: 1440px){
+    .product-display{
+        width: 55%;
+    }
+    .product-img{
+        height: 540px;
+    }
+    .back-arrow{
+        left: 490px;
+    }
+}
