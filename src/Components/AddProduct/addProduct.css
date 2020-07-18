@@ -127,6 +127,14 @@
 }
 @media (min-width: 1440px){
     .add-form{
+        width: 60%;
+    }
+    .back-arrow-add{
+        left: 325px;
+    }
+}
+@media (min-width: 1700px){
+    .add-form{
         width: 52%;
     }
     .back-arrow-add{

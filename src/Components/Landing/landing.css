@@ -67,6 +67,11 @@
 }
 @media (min-width: 1440px){
     .search-box{
+        top: 285px;
+    }
+}
+@media (min-width: 1700px){
+    .search-box{
         top: 300px;
     }
 } 

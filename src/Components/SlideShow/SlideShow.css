@@ -44,7 +44,7 @@
         width: 45%;
     }   
 }
-@media (min-width: 1440px){
+@media (min-width: 1700px){
     .align-slide{
         width: 50%;
         top: -230px;

@@ -175,6 +175,14 @@
 }
 @media (min-width: 1440px){
     .pro-search-text{
+        width: 300px;
+    }
+    .pro-mount{
+        top: 285px;
+    }
+}
+@media (min-width: 1700px){
+    .pro-search-text{
         width: 320px;
     }
     .pro-mount{

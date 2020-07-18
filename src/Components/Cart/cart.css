@@ -156,6 +156,19 @@ background-color: black;
     }
 }
 @media (min-width: 1440px){
+    .purchase-total{
+        /* background-color: grey; */
+        flex-direction: row;
+        width: 190px;
+        top: 110px;
+        right: 92px;
+    }
+    .purchase-total button{
+        font-size: 20px;
+        width: 160px;
+    }
+}
+@media (min-width: 1700px){
     .cart-product{
         width: 58%;
         height: 520px;

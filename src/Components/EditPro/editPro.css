@@ -112,6 +112,14 @@
 }
 @media (min-width: 1440px){
     .edit-form{
+        width: 60%;
+    }
+    .back-arrow-edit{
+        left: 325px;
+    }
+}
+@media (min-width: 1700px){
+    .edit-form{
         width: 52%;
     }
     .back-arrow-edit{

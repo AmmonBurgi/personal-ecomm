@@ -136,7 +136,7 @@ border: 2px solid #5098db;
         width: 55%;
     }
 }
-@media (min-width: 1440px){
+@media (min-width: 1700px){
     .select-product{
         width: 48%;
         height: 400px;

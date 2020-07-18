@@ -136,7 +136,18 @@ color: black;
         top: 18px;
     }
 }
+@media (min-width: 1438px) and (max-width: 1440px){
+    .title h1{
+        font-size: 26px;
+        padding-bottom: 28px;
+    }
+}
 @media (min-width: 1440px){
+    .home-icon{
+        top: 23px;
+    }
+}
+@media (min-width: 1700px){
  .title h1{
      font-size: 22px;
      padding-bottom: 32px;
