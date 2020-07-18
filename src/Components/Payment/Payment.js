@@ -12,7 +12,9 @@ function Payment(props){
 
   const confirmPayment = () => {
     const price = props.location.state
-    // console.log(price)
+    if(email.length === 0){
+      return toast.info('Email Required!')
+    }
     axios.get(`/api/intent/?price=${price}&&email=${email}`)
     .then(async (res) => {
       // console.log(res.data)

@@ -8,8 +8,9 @@ const express = require('express'),
     strCtrl = require('./stripeController'),
     port = SERVER_PORT,
     app = express()
-    
+
     app.use(express.json())
+    app.use(express.static(__dirname + '/../build'))
 
     app.use(session({
         resave: false,
@@ -48,3 +49,7 @@ const express = require('express'),
         console.log('db connected')
         app.listen(port, () => console.log(`server listening on port ${port}`))
     })
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '../build/index.html'))
+      });
