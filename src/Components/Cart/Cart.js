@@ -59,12 +59,18 @@ function Cart(props){
         })
         return total
     }
+    const goCheckout = () => {
+        if(getTotal() == 0){
+            return toast.info("You need an item in your cart before you can proceed!")
+        }
+        props.history.push({pathname: '/checkout', state: `${getTotal()}`})
+    }
 
     return(
         <div className='cart-pro-display'>
             <span className='purchase-total'>
                 <p className='cart-total'>Total: ${getTotal()}</p>
-                <Link to={{pathname: '/checkout', state: `${getTotal()}`}}><button>Checkout</button></Link>
+                <button onClick={goCheckout}>Checkout</button>
             </span>
             {cart.length === 0 ? (<p className='empty-cart'>Your Cart is empty! Go get yourself something nice!</p>) : (null)}
             {cartMap}

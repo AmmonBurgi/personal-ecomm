@@ -16,6 +16,8 @@ function Account(props){
         }).catch(err => console.log(err))
     }
 
+    console.log(props.user)
+
     return (
         <div className='account'>
             <div className='form'>

@@ -8,4 +8,4 @@ insert into ecom_user (
     $2,
     $3,
     $4
-)RETURNING user_id, email, username 
+)RETURNING user_id, email, username, admin

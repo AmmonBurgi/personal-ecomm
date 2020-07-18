@@ -5,7 +5,7 @@ const db = req.app.get('db')
 const {email, username, password, adminPass} = req.body
 let isAdmin = false
 if(adminPass.length !== 0){
-    if(adminPass === 'adminPassCode'){
+    if(adminPass === 'openSaysMe'){
         isAdmin = true
     } else {
         return res.status(401).send('Wrong Admin Password!')

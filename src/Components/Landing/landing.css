@@ -2,9 +2,18 @@
     box-sizing: border-box;
     padding: 10px;
     width: 100vw;
-    height: 92.7vh;
-    /* background-color: burlywood; */
-    /* position: relative; */
+    height: 80vh;
+    overflow: hidden;
+    opacity: 1;
+    transition: 2s;
+}
+.op-landing{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100vw;
+    height: 80vh;
+    /* height: 92.7vh; */
+    opacity: 0;
 }
 .search-box{
     position: absolute;

@@ -64,3 +64,8 @@
         width: 55vw;
     }
 }
+@media (min-width: 1440px){
+    .payment-card{
+        width: 45vw;
+    }   
+}

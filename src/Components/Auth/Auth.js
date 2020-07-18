@@ -58,7 +58,7 @@ const register = () => {
             ) : (
             <section className='form'>
                 <div className='check-text'><span>Admin:</span><input onClick={() => setAdmin(!admin)} type='checkbox' value={admin} /></div>
-                {admin === true ? (<input placeholder='Admin Password' value={adminPass} onChange={(e) => setAdminPass(e.target.value)} />) : (null)} 
+                {admin === true ? (<input placeholder='Admin Password' type='password' value={adminPass} onChange={(e) => setAdminPass(e.target.value)} />) : (null)} 
                 <input value={email} className='email-input' placeholder='Email' onChange={(e) => setEmail(e.target.value)} /> 
                 <input value={username} className='username-input' placeholder='Username' onChange={(e) => setUsername(e.target.value)} /> 
                 <input value={password} className='password-input' type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} /> 
@@ -68,7 +68,7 @@ const register = () => {
                 setToggle(!toggle)}}>Login</p></span>
             </section>
             )}
-            {admin === true ? (<p className='admin-text'>Admin password is 'adminPassCode'. Being an admin allows the user to add and edit products.</p>) : (null)}
+            {admin === true ? (<p className='admin-text'>Admin password is 'openSaysMe'. Being an admin allows the user to add and edit products.</p>) : (null)}
         </div>
     )
 }
