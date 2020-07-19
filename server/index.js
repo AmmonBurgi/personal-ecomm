@@ -53,9 +53,5 @@ const express = require('express'),
     })
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname + '../build/index.html'))
-<<<<<<< HEAD
+        res.sendFile(path.join(__dirname, '../build/index.html'))
       });
-=======
-      });
->>>>>>> 91991d4dedb280c45a0fb7350b233c50936238a3
