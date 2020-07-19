@@ -9,6 +9,8 @@ const express = require('express'),
     port = SERVER_PORT,
     app = express()
 
+    const path = require('path');
+
     app.use(express.json())
     app.use(express.static(__dirname + '/../build'))
 

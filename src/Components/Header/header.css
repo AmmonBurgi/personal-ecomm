@@ -20,7 +20,7 @@ justify-content: space-evenly;
 flex-direction: row;
 width: 67%;
 height: 100%;
-margin-top: 15px;
+margin-top: 11px;
 /* background-color: cornflowerblue; */
 }
 
@@ -57,7 +57,7 @@ height: 110px;
     color: white;
 }
 .title:hover h1{
-    border-bottom: solid black 4px;
+    border-bottom: solid black 6px;
     color: black;
 }
 .nav:hover, .nav:visited, .nav:link, .nav:active{
