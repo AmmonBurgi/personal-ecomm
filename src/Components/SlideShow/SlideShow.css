@@ -9,7 +9,7 @@
     height: 100%;
 }
 #ua{
-    padding-top: 160px;
+    padding-top: 150px;
 }
 @media (min-width: 768px){
     .logo{
@@ -17,7 +17,7 @@
         height: 100%;
     }
     #ua{
-        margin-top: 50px;
+        margin-top: 60px;
     }
     .align-slide{
         width: 80%;
@@ -26,9 +26,11 @@
         position: absolute;
         justify-content: center;
         align-items: center;
-        top: -20px;
-    }
-    #adidas{
+        /* top: -10px; */
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }
 @media (min-width: 1024px){
@@ -41,15 +43,21 @@
 }
 @media (min-width: 1280px){
     .align-slide{
+        top: -50px;
         width: 45%;
     }   
+}
+@media (min-width: 1440px){
+    .align-slide{
+        top: -60px;
+    }
 }
 @media (min-width: 1700px){
     .align-slide{
         width: 50%;
-        top: -230px;
+        top: -450px;
     }   
     #ua{
-        margin-top: 265px;
+        margin-top: 225px;
     }
 }

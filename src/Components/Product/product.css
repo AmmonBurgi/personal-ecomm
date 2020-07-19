@@ -16,7 +16,7 @@
 }
 .product-img{
     width: 85%;
-    height: 300px;
+    height: 200px;
     margin: 10px;
 }
 .product-display p{
@@ -52,6 +52,9 @@
     .product-display p{
         font-size: 25px;
     }
+    .product-img{
+        height: 310px;
+    }
 }
 @media (min-width: 1024px){
     .product-img{
@@ -67,7 +70,7 @@
         width: 70%;
     }
     .back-arrow{
-        left: 220px;
+        left: 200px;
     }
 }
 @media (min-width: 1440px){
@@ -75,7 +78,7 @@
         width: 60%;
     }
     .back-arrow{
-        left: 332px;
+        left: 300px;
     }
 }
 @media (min-width: 1700px){
@@ -86,6 +89,6 @@
         height: 540px;
     }
     .back-arrow{
-        left: 490px;
+        left: 440px;
     }
 }

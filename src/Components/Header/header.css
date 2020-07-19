@@ -20,7 +20,7 @@ justify-content: space-evenly;
 flex-direction: row;
 width: 67%;
 height: 100%;
-margin-top: 18px;
+margin-top: 15px;
 /* background-color: cornflowerblue; */
 }
 
@@ -38,7 +38,7 @@ height: 110px;
 .title h1{
     transition: .2s;
     font-size: 12px;
-    padding-bottom: 11px;
+    padding-bottom: 13px;
     color: #5098db;
     font-weight: bolder;
 }
@@ -66,7 +66,11 @@ height: 110px;
 .home-icon{
 position: absolute;
 left: 2%;
-top: 13px;
+/* top: 10.5px; */
+top: 0;
+bottom: 0;
+margin-top: auto;
+margin-bottom: auto;
 font-size: 30px;
 color: #5098db;
 transition: .5s;
@@ -111,7 +115,6 @@ color: black;
         color: black;
     }
     .home-icon{
-        top: 25px;
         font-size: 45px;
     }
     .shopping-cart{
@@ -127,34 +130,33 @@ color: black;
 }
 @media (min-width: 1024px){
     .brands{
-        margin-top: 20px;
+        margin-top: 46px;
     }
     .title h1{
         padding-bottom: 20px;
     }
-    .home-icon{
-        top: 18px;
+}
+@media (min-width: 1280px){
+    .brands{
+        margin-top: 1px;
     }
 }
 @media (min-width: 1440px){
     .brands{
-        margin-top: 16px;
+        margin-top: 0px;
     }
     .title h1{
         font-size: 22px;
-        padding-bottom: 20px;
-    }
-    .home-icon{
-        top: 20px;
+        padding-bottom: 18px;
     }
 }
 @media (min-width: 1700px){
  .title h1{
      font-size: 22px;
-     padding-bottom: 32px;
+     padding-bottom: 23.5px;
  }   
  .brands{
-     margin-top: 24px;
+     margin-top: 20px;
  }
  .shopping-cart{
      font-size: 42px;
@@ -164,7 +166,6 @@ color: black;
      font-size: 42px;
  }
  .home-icon{
-     top: 27px;
      font-size: 47px;
  }
 }

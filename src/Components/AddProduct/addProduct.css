@@ -130,7 +130,8 @@
         width: 60%;
     }
     .back-arrow-add{
-        left: 325px;
+        left: 300px;
+        top: 36px;
     }
 }
 @media (min-width: 1700px){
@@ -138,7 +139,7 @@
         width: 52%;
     }
     .back-arrow-add{
-        left: 520px;
+        left: 470px;
         top: 37px;
     }
 }
