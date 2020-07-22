@@ -20,8 +20,8 @@ useEffect(() => {
             <section className='product-display'>
                 <img className='product-img' src={product.pro_img} alt={product.pro_title} />
                 <span className='title-align'>
-                    <p className='product-title'>{product.pro_title}</p>
-                    <p className='product-price'>${product.price}</p>
+                    <p className='product-title'>Title: {product.pro_title}</p>
+                    <p className='product-price'>Price: ${product.price}</p>
                 </span>
                 <p className='product-description'>{product.description}</p>
             </section>
